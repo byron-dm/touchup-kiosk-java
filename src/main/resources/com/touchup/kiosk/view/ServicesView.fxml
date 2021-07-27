@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.touchup.kiosk.view.ServicesView"
+         cols="[fill, grow]" layout="insets 0, wrap" rows="[][][60%!][fill, grow]" styleClass="panel-services">
+
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroupService"/>
+    </fx:define>
+
+    <MigPane cols="[][fill, grow][fill, grow][fill, grow][]" layout="insets 0" rows="[center]" styleClass="top-panel">
+        <Button onAction="#goToStartScreen" contentDisplay="GRAPHIC_ONLY">
+            <graphic>
+                <FontIcon iconLiteral="fas-arrow-left:24:0x0076FF" />
+            </graphic>
+        </Button>
+        <Label styleClass="step-active" text="%Label.Services" />
+        <Label styleClass="step-inactive" text="%Label.Products" />
+        <Label styleClass="step-inactive" text="%Label.PayNow" />
+        <ImageView preserveRatio="true" fitWidth="110">
+            <Image url="/images/touchup-logo.png" />
+        </ImageView>
+    </MigPane>
+
+    <Label alignment="CENTER" styleClass="label-service" text="%ServicesView.Label.Choose" />
+
+    <MigPane cols="30[fill, grow]30" layout="wrap" rows="[]30[]30[]">
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectService" toggleGroup="$toggleGroupService" userData="%ServicesView.Label.SelfServe">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <MigPane cols="[]push[]">
+                        <ImageView>
+                            <Image url="/images/services/self-serve.png" />
+                        </ImageView>
+                        <Label styleClass="label-service-cost" text="\$ 10" />
+                    </MigPane>
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-service-name" text="%ServicesView.Label.SelfServe" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectService" toggleGroup="$toggleGroupService" userData="%ServicesView.Label.HandWash">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <MigPane cols="[]push[]">
+                        <ImageView>
+                            <Image url="/images/services/hand-wash.png" />
+                        </ImageView>
+                        <Label styleClass="label-service-cost" text="\$ 15" />
+                    </MigPane>
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-service-name" text="%ServicesView.Label.HandWash" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectService" toggleGroup="$toggleGroupService" userData="%ServicesView.Label.FullServe">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <MigPane cols="[]push[]">
+                        <ImageView>
+                            <Image url="/images/services/full-serve.png" />
+                        </ImageView>
+                        <Label styleClass="label-service-cost" text="\$ 20" />
+                    </MigPane>
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-service-name" text="%ServicesView.Label.FullServe" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+    </MigPane>
+
+    <MigPane cols="[60%!, fill][fill, grow]" layout="gap 0, insets 0" rows="[fill, grow]">
+        <MigPane cols="[fill, grow]" layout="insets 30, wrap" styleClass="panel-service-name">
+            <Label text="%Label.Service" />
+            <MigPane cols="[]push[]0[]" layout="insets 0" styleClass="panel-detail">
+                <Label fx:id="labelServiceName" />
+                <Label text="\$" />
+                <Label fx:id="labelServiceCost" />
+            </MigPane>
+        </MigPane>
+
+        <MigPane cols="[fill, grow]" layout="insets 30, wrap" rows="[][]push[]" styleClass="panel-total-cost">
+            <Label text="%Label.Total" />
+            <MigPane layout="insets 0">
+                <Label text="\$" />
+                <Label fx:id="labelTotalCost" />
+            </MigPane>
+            <MigPane cols="push[]push" layout="insets 0">
+                <Button fx:id="buttonNext" onAction="#goToProductsScreen" text="%ServicesView.Button.Next" />
+            </MigPane>
+        </MigPane>
+    </MigPane>
+</MigPane>

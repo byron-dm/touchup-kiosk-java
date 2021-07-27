@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.touchup.kiosk.controls.RadioToggleButton?>
+<?import com.touchup.kiosk.controls.StopWatch?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<?import javafx.scene.control.Button?>
+<MigPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.touchup.kiosk.view.CustomWashingMethodView"
+         cols="[fill, grow]" layout="insets 0, wrap" rows="[]push[]" styleClass="panel-touch-up">
+
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroupMethod"/>
+        <ToggleGroup fx:id="toggleGroupMode"/>
+    </fx:define>
+
+    <MigPane cols="[fill, grow]" layout="insets 20, wrap">
+        <MigPane cols="push[fill, grow][fill, grow]push[]" layout="gap 20, insets 0" rows="[center]" styleClass="top-panel">
+            <Label styleClass="step-active" text="%Label.Washing" />
+            <Label styleClass="step-inactive" text="%Label.Complete" />
+            <ImageView preserveRatio="true" fitWidth="110">
+                <Image url="/images/touchup-logo.png" />
+            </ImageView>
+        </MigPane>
+
+        <Label alignment="CENTER" styleClass="label-text" text="%CustomWashingMethodView.Label.ChooseAMethod" />
+
+        <MigPane cols="push[]20[]push">
+            <StopWatch fx:id="stopWatch" message="%StopWatch.Message.Timer" size="150" />
+            <Button onAction="#addMoreTime" text="%Button.AddMoreTime" />
+        </MigPane>
+
+        <MigPane cols="push[fill, grow, 250!]push" layout="wrap 3">
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.WheelCleaning" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.PreSoak" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.HighPressureSoak" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.FoamingBrush" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.FoamGun" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.HandWash" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.HighPressureRinse" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.HighPressureWax" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.SpotFreeRinse" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.Drying" toggleGroup="$toggleGroupMode" />
+            <RadioToggleButton focusTraversable="false" text="%ToggleButton.Vacuum" toggleGroup="$toggleGroupMode" />
+        </MigPane>
+    </MigPane>
+
+    <MigPane cols="fill, grow" layout="gap 0, insets 0" rows="[bottom]" styleClass="panel-method">
+        <RadioToggleButton contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#goToTouchUpMethodScreen" toggleGroup="$toggleGroupMethod">
+            <graphic>
+                <MigPane cols="push[center]push" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/select-method/touch-up.png" />
+                    </ImageView>
+                    <Label styleClass="label-method" text="%SelectMethodView.Label.TouchUp" />
+                </MigPane>
+            </graphic>
+        </RadioToggleButton>
+
+        <RadioToggleButton fx:id="toggleButtonCustomMethod" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" toggleGroup="$toggleGroupMethod">
+            <graphic>
+                <MigPane cols="push[center]push" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/select-method/custom.png" />
+                    </ImageView>
+                    <Label styleClass="label-method" text="%SelectMethodView.Label.Custom" />
+                </MigPane>
+            </graphic>
+        </RadioToggleButton>
+    </MigPane>
+</MigPane>

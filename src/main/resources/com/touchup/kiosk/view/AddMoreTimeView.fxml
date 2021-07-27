@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.touchup.kiosk.controls.RadioToggleButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<?import com.touchup.kiosk.controls.StopWatch?>
+<MigPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.touchup.kiosk.view.AddMoreTimeView"
+         cols="[fill, grow]" layout="insets 20, wrap" rows="[][][][][]push[]" styleClass="panel-wash-complete">
+
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroupMoreTime"/>
+    </fx:define>
+
+    <MigPane cols="push[fill, grow]20[fill, grow]20[fill, grow]push[]" layout="insets 0" rows="[center]" styleClass="top-panel">
+        <Label styleClass="step-active" text="%Label.Mode" />
+        <Label styleClass="step-active" text="%Label.Washing" />
+        <Label styleClass="step-active" text="%Label.Complete" />
+        <ImageView preserveRatio="true" fitWidth="110">
+            <Image url="/images/touchup-logo.png" />
+        </ImageView>
+    </MigPane>
+
+    <Label alignment="CENTER" styleClass="label-wash-complete" text="%WashCompleteView.Label.WashComplete" />
+
+    <MigPane cols="push[]push">
+        <StopWatch fx:id="stopWatch" message="%StopWatch.Message.Timer" size="150" />
+    </MigPane>
+
+    <Label alignment="CENTER" styleClass="label-add-time" text="%WashCompleteView.Label.AddMoreTime" />
+
+    <MigPane cols="push[fill, grow, 200!]push">
+        <RadioToggleButton contentDisplay="GRAPHIC_ONLY" toggleGroup="$toggleGroupMoreTime" userData="5">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/washing-complete/add-5-minutes.png" />
+                    </ImageView>
+                    <Label styleClass="label-time" text="%WashCompleteView.Label.5Minutes" />
+                    <Label styleClass="label-cost" text="\$ 3" />
+                </MigPane>
+            </graphic>
+        </RadioToggleButton>
+        <RadioToggleButton contentDisplay="GRAPHIC_ONLY" toggleGroup="$toggleGroupMoreTime" userData="10">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/washing-complete/add-10-minutes.png" />
+                    </ImageView>
+                    <Label styleClass="label-time" text="%WashCompleteView.Label.10Minutes" />
+                    <Label styleClass="label-cost" text="\$ 5" />
+                </MigPane>
+            </graphic>
+        </RadioToggleButton>
+        <RadioToggleButton contentDisplay="GRAPHIC_ONLY" toggleGroup="$toggleGroupMoreTime" userData="15">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/washing-complete/add-15-minutes.png" />
+                    </ImageView>
+                    <Label styleClass="label-time" text="%WashCompleteView.Label.15Minutes" />
+                    <Label styleClass="label-cost" text="\$ 7" />
+                </MigPane>
+            </graphic>
+        </RadioToggleButton>
+    </MigPane>
+
+    <MigPane cols="push[]push">
+        <Button fx:id="buttonStartNow" onAction="#startNow" text="%Button.StartNow" />
+    </MigPane>
+</MigPane>

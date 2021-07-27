@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.touchup.kiosk.view.StartView" fx:id="panelStart"
+         cols="[center]" layout="fillx, insets 40, wrap" rows="[]40[]20[][]20[]push[]" styleClass="start-panel">
+    <ImageView>
+        <Image url="/images/touchup-logo.png" />
+    </ImageView>
+    <ImageView>
+        <Image url="/images/services/full-serve.png" />
+    </ImageView>
+    <Label styleClass="label-welcome" text="%StartView.Label.Welcome1" />
+    <Label styleClass="label-welcome" text="%StartView.Label.Welcome2" />
+    <Button onAction="#goToServicesScreen" text="%Button.StartNow" />
+    <Label styleClass="label-start" text="%StartView.Label.Start" />
+</MigPane>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.touchup.kiosk.controls.RadioToggleButton?>
+<?import com.touchup.kiosk.controls.StopWatch?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.touchup.kiosk.view.SelectMethodView"
+         cols="[fill, grow]" layout="gap 20, insets 20, wrap" rows="[][][][]push[]" styleClass="panel-method">
+
+    <fx:define>
+        <ToggleGroup fx:id="toggleGroupMethod"/>
+    </fx:define>
+
+    <MigPane cols="push[fill, grow]20[fill, grow]20[fill, grow]push[]" layout="insets 0" rows="[center]" styleClass="top-panel">
+        <Label styleClass="step-active" text="%Label.Mode" />
+        <Label styleClass="step-inactive" text="%Label.Washing" />
+        <Label styleClass="step-inactive" text="%Label.Complete" />
+        <ImageView preserveRatio="true" fitWidth="110">
+            <Image url="/images/touchup-logo.png" />
+        </ImageView>
+    </MigPane>
+
+    <Label alignment="CENTER" styleClass="label-text" text="%SelectMethodView.Label.Choose" />
+
+    <MigPane cols="push[fill, grow, 200!]20[fill, grow, 200!]push" rows="[fill, grow]">
+        <RadioToggleButton fx:id="toggleButtonTouchUpMethod" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" selected="true" toggleGroup="$toggleGroupMethod">
+            <graphic>
+                <MigPane cols="[center, fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/select-method/touch-up.png" />
+                    </ImageView>
+                    <Label styleClass="label-method" text="%SelectMethodView.Label.TouchUp" textAlignment="CENTER" wrapText="true" />
+                </MigPane>
+            </graphic>
+        </RadioToggleButton>
+
+
+        <RadioToggleButton contentDisplay="GRAPHIC_ONLY" focusTraversable="false" toggleGroup="$toggleGroupMethod">
+            <graphic>
+                <MigPane cols="[center, fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/select-method/custom.png" />
+                    </ImageView>
+                    <Label styleClass="label-method" text="%SelectMethodView.Label.Custom" />
+                </MigPane>
+            </graphic>
+        </RadioToggleButton>
+    </MigPane>
+
+    <MigPane cols="push[]push">
+        <StopWatch fx:id="stopWatch" message="%SelectMethodView.StopWatch.Message" size="150" />
+    </MigPane>
+
+    <MigPane cols="push[]push" layout="insets 0">
+        <Button onAction="#goToWashMethodScreen" text="%Button.StartNow" />
+    </MigPane>
+</MigPane>

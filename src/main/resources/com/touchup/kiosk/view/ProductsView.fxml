@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import org.tbee.javafx.scene.layout.fxml.MigPane?>
+
+<MigPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+         fx:controller="com.touchup.kiosk.view.ProductsView"
+         cols="[fill, grow]" layout="insets 0, wrap" rows="[][][60%!][fill, grow]" styleClass="panel-products">
+
+    <MigPane cols="[][fill, grow][fill, grow][fill, grow][]" layout="insets 0" rows="[center]" styleClass="top-panel">
+        <Button onAction="#goToServicesScreen" contentDisplay="GRAPHIC_ONLY">
+            <graphic>
+                <FontIcon iconLiteral="fas-arrow-left:24:0x0076FF" />
+            </graphic>
+        </Button>
+        <Label styleClass="step-active" text="%Label.Services" />
+        <Label styleClass="step-active" text="%Label.Products" />
+        <Label styleClass="step-inactive" text="%Label.PayNow" />
+        <ImageView preserveRatio="true" fitWidth="110">
+            <Image url="/images/touchup-logo.png" />
+        </ImageView>
+    </MigPane>
+
+    <Label alignment="CENTER" styleClass="label-product" text="%ProductsView.Label.Choose" />
+
+    <MigPane cols="push[fill, grow, 15%!]30[fill, grow, 15%!]30[fill, grow, 15%!]push" layout="wrap 3" rows="[fill, grow]30[fill, grow]30[fill, grow]">
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectProduct" userData="%ProductsView.Label.3PackMicrofibers">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/products/3-pack-microfibers.png" />
+                    </ImageView>
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.3PackMicrofibers" />
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-product-cost" text="\$ 2" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectProduct" userData="%ProductsView.Label.5PackMicrofibers">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/products/5-pack-microfibers.png" />
+                    </ImageView>
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.5PackMicrofibers" />
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-product-cost" text="\$ 3" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectProduct" userData="%ProductsView.Label.TireGel">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/products/tire-gel.png" />
+                    </ImageView>
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.TireGel" />
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-product-cost" text="\$ 1.5" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectProduct" userData="%ProductsView.Label.TireApplicator">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/products/tire-applicator.png" />
+                    </ImageView>
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.TireApplicator" />
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-product-cost" text="\$ 1" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectProduct" userData="%ProductsView.Label.InteriorSpray">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/products/interior-spray.png" />
+                    </ImageView>
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.InteriorSpray" />
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-product-cost" text="\$ 1" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectProduct" userData="%ProductsView.Label.WindowSpray">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/products/window-spray.png" />
+                    </ImageView>
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.WindowSpray" />
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-product-cost" text="\$ 1" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectProduct" userData="%ProductsView.Label.AirFresheners">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/products/air-fresheners.png" />
+                    </ImageView>
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.AirFresheners" />
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-product-cost" text="\$ 1" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton contentDisplay="GRAPHIC_ONLY" onAction="#selectProduct" userData="%ProductsView.Label.LeatherConditioner">
+            <graphic>
+                <MigPane cols="[fill, grow]" layout="wrap">
+                    <ImageView>
+                        <Image url="/images/products/leather-conditioner.png" />
+                    </ImageView>
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.LeatherConditioner" />
+                    <MigPane cols="[]push[]">
+                        <Label styleClass="label-product-cost" text="\$ 1.5" />
+                        <FontIcon iconLiteral="fas-check:24:white" />
+                    </MigPane>
+                </MigPane>
+            </graphic>
+        </ToggleButton>
+    </MigPane>
+
+    <MigPane cols="[60%!, fill][fill, grow]" layout="gap 0, insets 0" rows="[fill, grow]">
+        <MigPane cols="[fill, grow]" layout="insets 30, wrap" styleClass="panel-service-name" rows="[][]30[]30[][]">
+            <Label text="%Label.Service" />
+            <MigPane cols="[]push[]0[]" layout="insets 0" styleClass="panel-detail">
+                <Label fx:id="labelServiceName" />
+                <Label text="\$" />
+                <Label fx:id="labelServiceCost" />
+            </MigPane>
+
+            <Separator />
+
+            <Label text="%Label.Products" />
+            <MigPane cols="[]push[]0[]" layout="insets 0" styleClass="panel-detail">
+                <Label fx:id="labelProductsCount" />
+                <Label text="\$" />
+                <Label fx:id="labelProductsCost" />
+            </MigPane>
+        </MigPane>
+
+        <MigPane cols="[fill, grow]" layout="insets 30, wrap" rows="[][]push[]" styleClass="panel-total-cost">
+            <Label text="%Label.Total" />
+            <MigPane layout="insets 0">
+                <Label text="\$" />
+                <Label fx:id="labelTotalCost" />
+            </MigPane>
+            <MigPane cols="push[]push" layout="insets 0">
+                <Button fx:id="buttonPayNow" onAction="#goToPayNowScreen" text="%ProductsView.Button.PayNow" />
+            </MigPane>
+        </MigPane>
+    </MigPane>
+</MigPane>

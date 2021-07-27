@@ -1,0 +1,202 @@
+/*@font-face {
+    font-family: 'Chalet';
+    src: url('/fonts/ChaletNewYorkNineTeenSixty.ttf');
+}
+
+.root * {
+    -fx-font-family: 'Chalet';
+}*/
+
+.button {
+    -fx-background-insets: 0;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-background-color: #0076FF;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 30 10 30;
+    -fx-text-fill: white;
+}
+
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+
+.toggle-button {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 4;
+    -fx-border-width: 2;
+    -fx-border-color: #D5DDE4;
+    -fx-border-radius: 4;
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;;
+}
+.toggle-button:selected {
+    -fx-background-color: #0076FF;
+    -fx-border-color: #0076FF;
+    -fx-text-fill: white;
+}
+.toggle-button:selected .label {
+    -fx-text-fill: white;
+}
+
+
+.label-text {
+    -fx-font-size: 3em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+
+.panel-service-name {
+    -fx-background-color: #050748;
+}
+.panel-service-name > .label {
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #A8A9C4;
+}
+.panel-service-name .panel-detail .label {
+    -fx-font-size: 1.5em;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.panel-total-cost {
+    -fx-background-color: #27296C;
+}
+.panel-total-cost .label {
+    -fx-font-size: 3em;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.top-panel .button {
+    -fx-background-color: transparent;
+    -fx-border-color: #0076FF;
+    -fx-padding: 10;
+}
+
+.top-panel .step-active {
+    -fx-border-color: #0076FF;
+    -fx-border-width: 2 0 0 0;
+    -fx-font-size: 1.4em;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 0 0;
+    -fx-text-fill: #0076FF;
+}
+
+.top-panel .step-inactive {
+    -fx-border-color: #BFCED9;
+    -fx-border-width: 2 0 0 0;
+    -fx-font-size: 1.4em;
+    -fx-font-weight: bold;
+    -fx-padding: 5 0 0 0;
+    -fx-text-fill: #BFCED9;
+}
+
+/******************************************************PayNowView******************************************************/
+.panel-pay-now .label-or {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #A8A9C4;
+}
+.panel-pay-now .label-pay-method {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+.panel-pay-now .label-pay-now {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+
+/******************************************************ProductsView****************************************************/
+.panel-products .label-product {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+.panel-products .label-product-cost {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0076FF;
+}
+.panel-products .label-product-name {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+
+/****************************************************SelectModeView****************************************************/
+.panel-method .label-method {
+    -fx-font-size: 2em;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+
+/******************************************************ServicesView****************************************************/
+.panel-services .label-service {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+.panel-services .label-service-cost {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0076FF;
+}
+.panel-services .label-service-name {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+
+/*****************************************************StartView********************************************************/
+.start-panel {
+    -fx-background-color: #F0F6FC;
+}
+.start-panel .label-start {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #BFCED9;
+}
+.start-panel .label-welcome {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+
+/***************************************************TouchUpView********************************************************/
+.panel-touch-up .panel-method .toggle-button {
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+}
+.panel-touch-up .panel-method .toggle-button:selected {
+    -fx-background-radius: 4 4 0 0;
+    -fx-border-radius: 4 4 0 0;
+    -fx-padding: 15;
+}
+
+/**************************************************WashCompleteView****************************************************/
+.panel-wash-complete .label-add-time {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27296C;
+}
+.panel-wash-complete .label-cost {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0076FF;
+}
+.panel-wash-complete .label-time {
+    -fx-font-size: 20px;
+    -fx-text-fill: #27296C;
+}
+.panel-wash-complete .label-wash-complete {
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0076FF;
+}
