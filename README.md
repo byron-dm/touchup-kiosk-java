@@ -21,6 +21,7 @@ First, make sure Java v16+ is correctly installed on your system. Then, run the 
 * gradlew run
 
 To generate native installers (currently only Windows is supported):
-* Run: "gradlew clean jpackage".    
+* Install the latest production version of the Wix Toolset (https://wixtoolset.org/releases/)
+* From the run project folder run: "gradlew clean jpackage".    
 
 A Windows executable and a MSI installer will be generated inside the "build/jpackage" folder

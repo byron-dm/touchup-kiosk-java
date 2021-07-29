@@ -13,7 +13,7 @@ import javax.inject.Inject;
 
 public final class SelectMethodViewModel implements ViewModel {
 
-  private static final int AUTOSTART_DURATION = 10;
+  private static final int AUTOSTART_DURATION = 30;
 
   private final BooleanProperty touchUpMethodSelected = new SimpleBooleanProperty(true);
   private final EventBus eventBus;

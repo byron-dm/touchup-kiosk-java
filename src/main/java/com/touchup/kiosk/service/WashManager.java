@@ -5,7 +5,7 @@ import javax.inject.Inject;
 
 public final class WashManager {
 
-  public static final int WASH_DURATION = 30;
+  public static final int WASH_DURATION = 1200;
 
   private final TimerService timerService;
 
