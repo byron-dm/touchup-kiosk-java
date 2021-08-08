@@ -1,4 +1,4 @@
 package com.touchup.kiosk.events;
 
-public final class WashingComplete {
+public final class MoreTimeWanted {
 }

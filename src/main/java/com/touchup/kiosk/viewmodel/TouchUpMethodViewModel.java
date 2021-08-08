@@ -2,7 +2,7 @@ package com.touchup.kiosk.viewmodel;
 
 import com.google.common.eventbus.EventBus;
 import com.touchup.kiosk.events.WashMethod;
-import com.touchup.kiosk.events.WashingComplete;
+import com.touchup.kiosk.events.WashingCompleted;
 import com.touchup.kiosk.service.WashManager;
 import de.saxsys.mvvmfx.ViewModel;
 import javafx.beans.property.ReadOnlyBooleanProperty;
@@ -20,7 +20,7 @@ public class TouchUpMethodViewModel implements ViewModel {
 
     washManager.getTimerService().reverseProperty().set(true);
     washManager.getTimerService().durationProperty().set(WashManager.WASH_DURATION);
-    washManager.getTimerService().setOnFinished(() -> eventBus.post(new WashingComplete()));
+    washManager.getTimerService().setOnFinished(() -> eventBus.post(new WashingCompleted()));
   }
 
   public ReadOnlyBooleanProperty reverseProperty() {

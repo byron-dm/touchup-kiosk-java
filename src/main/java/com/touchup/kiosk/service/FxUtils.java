@@ -8,6 +8,7 @@ import com.touchup.kiosk.view.SelectMethodView;
 import com.touchup.kiosk.view.ServicesView;
 import com.touchup.kiosk.view.StartView;
 import com.touchup.kiosk.view.TouchUpMethodView;
+import com.touchup.kiosk.view.WashingCompletedView;
 import de.saxsys.mvvmfx.FluentViewLoader;
 import de.saxsys.mvvmfx.FxmlView;
 import java.util.HashMap;
@@ -44,6 +45,8 @@ public final class FxUtils {
   }
 
   public void preloadScreens() {
+    screens.put(AddMoreTimeView.class,
+      FluentViewLoader.fxmlView(AddMoreTimeView.class).resourceBundle(resources).load().getView());
     screens.put(CustomWashingMethodView.class,
       FluentViewLoader.fxmlView(CustomWashingMethodView.class).resourceBundle(resources).load().getView());
     screens.put(PayNowView.class,
@@ -58,7 +61,7 @@ public final class FxUtils {
       FluentViewLoader.fxmlView(StartView.class).resourceBundle(resources).load().getView());
     screens.put(TouchUpMethodView.class,
       FluentViewLoader.fxmlView(TouchUpMethodView.class).resourceBundle(resources).load().getView());
-    screens.put(AddMoreTimeView.class,
-      FluentViewLoader.fxmlView(AddMoreTimeView.class).resourceBundle(resources).load().getView());
+    screens.put(WashingCompletedView.class,
+      FluentViewLoader.fxmlView(WashingCompletedView.class).resourceBundle(resources).load().getView());
   }
 }

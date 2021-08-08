@@ -32,11 +32,11 @@ public final class ProductsView implements FxmlView<ProductsViewModel> {
 
   @FXML
   private void initialize() {
-    labelProductsCost.textProperty().bind(viewModel.productsCostProperty().asString());
-    labelProductsCount.textProperty().bind(viewModel.productsCountProperty().asString());
+    labelProductsCost.textProperty().bind(viewModel.productsCostProperty());
+    labelProductsCount.textProperty().bind(viewModel.productsCountProperty());
     labelServiceName.textProperty().bind(viewModel.serviceNameProperty());
-    labelServiceCost.textProperty().bind(viewModel.serviceCostProperty().asString());
-    labelTotalCost.textProperty().bind(viewModel.totalCostProperty().asString());
+    labelServiceCost.textProperty().bind(viewModel.serviceCostProperty());
+    labelTotalCost.textProperty().bind(viewModel.totalCostProperty());
   }
 
   @FXML

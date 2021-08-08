@@ -7,36 +7,32 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 
 <MigPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-         fx:controller="com.touchup.kiosk.view.AddMoreTimeView"
-         cols="[fill, grow]" layout="insets 20, wrap" rows="[][][][]push[]" styleClass="panel-wash-complete">
+         fx:controller="com.touchup.kiosk.view.WashingCompletedView"
+         cols="[fill, grow]" layout="insets 20, wrap" rows="[][][][][]push[]" styleClass="panel-wash-complete">
 
     <fx:define>
         <ToggleGroup fx:id="toggleGroupMoreTime"/>
     </fx:define>
 
-    <MigPane cols="push[]20[fill, grow]20[fill, grow]20[fill, grow]push[]" layout="insets 0" rows="[center]" styleClass="top-panel">
-        <Button onAction="#goToSelectedMethod" contentDisplay="GRAPHIC_ONLY">
-            <graphic>
-                <FontIcon iconLiteral="fas-arrow-left:24:0x0076FF" />
-            </graphic>
-        </Button>
+    <MigPane cols="push[fill, grow]20[fill, grow]20[fill, grow]push[]" layout="insets 0" rows="[center]" styleClass="top-panel">
         <Label styleClass="step-active" text="%Label.Mode" />
         <Label styleClass="step-active" text="%Label.Washing" />
-        <Label styleClass="step-inactive" text="%Label.Complete" />
+        <Label styleClass="step-active" text="%Label.Complete" />
         <ImageView preserveRatio="true" fitWidth="110">
             <Image url="/images/touchup-logo.png" />
         </ImageView>
     </MigPane>
 
-    <Label alignment="CENTER" styleClass="label-wash-complete" text="%Label.AddMoreTime" />
+    <Label alignment="CENTER" styleClass="label-wash-complete" text="%WashCompleteView.Label.WashComplete" />
 
     <MigPane cols="push[]push">
         <StopWatch fx:id="stopWatch" message="%StopWatch.Message.Timer" size="150" />
     </MigPane>
+
+    <Label alignment="CENTER" styleClass="label-add-time" text="%Label.AddMoreTime" />
 
     <MigPane cols="push[fill, grow, 200!]push">
         <RadioToggleButton contentDisplay="GRAPHIC_ONLY" toggleGroup="$toggleGroupMoreTime" userData="5">

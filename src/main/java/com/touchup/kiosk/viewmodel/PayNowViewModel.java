@@ -1,7 +1,9 @@
 package com.touchup.kiosk.viewmodel;
 
+import com.touchup.kiosk.service.FormatUtils;
 import com.touchup.kiosk.service.ServeManager;
 import de.saxsys.mvvmfx.ViewModel;
+import javafx.beans.binding.StringBinding;
 import javafx.beans.property.DoubleProperty;
 import javax.inject.Inject;
 
@@ -14,7 +16,7 @@ public class PayNowViewModel implements ViewModel {
     this.serveManager = serveManager;
   }
 
-  public DoubleProperty totalCostProperty() {
-    return serveManager.totalCostProperty();
+  public StringBinding totalCostProperty() {
+    return serveManager.totalCostProperty().asString(FormatUtils.DECIMAL_FORMAT);
   }
 }

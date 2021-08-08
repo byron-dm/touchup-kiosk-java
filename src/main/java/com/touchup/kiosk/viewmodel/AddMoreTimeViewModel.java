@@ -1,6 +1,7 @@
 package com.touchup.kiosk.viewmodel;
 
 import com.google.common.eventbus.EventBus;
+import com.touchup.kiosk.events.WashMethod;
 import com.touchup.kiosk.events.WashMethodSelected;
 import com.touchup.kiosk.service.WashManager;
 import de.saxsys.mvvmfx.ViewModel;
@@ -34,6 +35,10 @@ public class AddMoreTimeViewModel implements ViewModel {
 
   public ReadOnlyStringProperty formattedTimeProperty() {
     return washManager.getTimerService().formattedTimeProperty();
+  }
+
+  public WashMethod getWashMethod() {
+    return washManager.getWashMethod();
   }
 
   public void addMoreTime(int minutes) {

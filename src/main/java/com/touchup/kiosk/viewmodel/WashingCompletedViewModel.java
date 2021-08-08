@@ -1,8 +1,7 @@
 package com.touchup.kiosk.viewmodel;
 
 import com.google.common.eventbus.EventBus;
-import com.touchup.kiosk.events.WashMethod;
-import com.touchup.kiosk.events.WashingCompleted;
+import com.touchup.kiosk.events.WashMethodSelected;
 import com.touchup.kiosk.service.WashManager;
 import de.saxsys.mvvmfx.ViewModel;
 import javafx.beans.property.ReadOnlyBooleanProperty;
@@ -10,17 +9,15 @@ import javafx.beans.property.ReadOnlyIntegerProperty;
 import javafx.beans.property.ReadOnlyStringProperty;
 import javax.inject.Inject;
 
-public class CustomWashingMethodViewModel implements ViewModel {
+public class WashingCompletedViewModel implements ViewModel {
 
+  private final EventBus eventBus;
   private final WashManager washManager;
 
   @Inject
-  public CustomWashingMethodViewModel(EventBus eventBus, WashManager washManager) {
+  public WashingCompletedViewModel(EventBus eventBus, WashManager washManager) {
+    this.eventBus = eventBus;
     this.washManager = washManager;
-
-    washManager.getTimerService().reverseProperty().set(true);
-    washManager.getTimerService().durationProperty().set(WashManager.WASH_DURATION);
-    washManager.getTimerService().setOnFinished(() -> eventBus.post(new WashingCompleted()));
   }
 
   public ReadOnlyBooleanProperty reverseProperty() {
@@ -39,11 +36,8 @@ public class CustomWashingMethodViewModel implements ViewModel {
     return washManager.getTimerService().formattedTimeProperty();
   }
 
-  public void setCustomWashingMethod() {
-    washManager.setWashMethod(WashMethod.CUSTOM);
-  }
-
-  public void start() {
-    washManager.getTimerService().start();
+  public void addMoreTime(int minutes) {
+    washManager.getTimerService().addDuration(minutes);
+    eventBus.post(new WashMethodSelected(washManager.getWashMethod()));
   }
 }

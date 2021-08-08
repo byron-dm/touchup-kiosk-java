@@ -28,7 +28,7 @@ public class PayNowView implements FxmlView<PayNowViewModel> {
 
   @FXML
   private void initialize() {
-    labelTotalCost.textProperty().bind(viewModel.totalCostProperty().asString());
+    labelTotalCost.textProperty().bind(viewModel.totalCostProperty());
   }
 
   @FXML

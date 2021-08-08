@@ -33,9 +33,9 @@ public final class ServicesView implements FxmlView<ServicesViewModel> {
   @FXML
   private void initialize() {
     buttonNext.disableProperty().bind(toggleGroupService.selectedToggleProperty().isNull());
-    labelServiceCost.textProperty().bind(viewModel.serviceCostProperty().asString());
+    labelServiceCost.textProperty().bind(viewModel.serviceCostProperty());
     labelServiceName.textProperty().bind(viewModel.serviceNameProperty());
-    labelTotalCost.textProperty().bind(viewModel.totalCostProperty().asString());
+    labelTotalCost.textProperty().bind(viewModel.totalCostProperty());
   }
 
   @FXML

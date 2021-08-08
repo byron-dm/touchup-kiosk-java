@@ -4,9 +4,9 @@ import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.touchup.kiosk.controls.RadioToggleButton;
 import com.touchup.kiosk.controls.StopWatch;
+import com.touchup.kiosk.events.MoreTimeWanted;
 import com.touchup.kiosk.events.WashMethod;
 import com.touchup.kiosk.events.WashMethodSelected;
-import com.touchup.kiosk.events.WashingComplete;
 import com.touchup.kiosk.service.FxUtils;
 import com.touchup.kiosk.viewmodel.CustomWashingMethodViewModel;
 import de.saxsys.mvvmfx.FxmlView;
@@ -42,7 +42,7 @@ public class CustomWashingMethodView implements FxmlView<CustomWashingMethodView
 
   @FXML
   private void addMoreTime() {
-    eventBus.post(new WashingComplete());
+    eventBus.post(new MoreTimeWanted());
   }
 
   @FXML

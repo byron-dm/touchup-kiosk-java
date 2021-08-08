@@ -3,10 +3,9 @@ package com.touchup.kiosk.view;
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
 import com.touchup.kiosk.controls.StopWatch;
-import com.touchup.kiosk.events.MoreTimeWanted;
-import com.touchup.kiosk.events.WashMethodSelected;
+import com.touchup.kiosk.events.WashingCompleted;
 import com.touchup.kiosk.service.FxUtils;
-import com.touchup.kiosk.viewmodel.AddMoreTimeViewModel;
+import com.touchup.kiosk.viewmodel.WashingCompletedViewModel;
 import de.saxsys.mvvmfx.FxmlView;
 import de.saxsys.mvvmfx.InjectViewModel;
 import javafx.fxml.FXML;
@@ -14,20 +13,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ToggleGroup;
 import javax.inject.Inject;
 
-public class AddMoreTimeView implements FxmlView<AddMoreTimeViewModel> {
+public class WashingCompletedView implements FxmlView<WashingCompletedViewModel> {
 
   private final EventBus eventBus;
   private final FxUtils fxUtils;
 
   @InjectViewModel
-  private AddMoreTimeViewModel viewModel;
+  private WashingCompletedViewModel viewModel;
 
   @FXML private Button buttonStartNow;
   @FXML private StopWatch stopWatch;
   @FXML private ToggleGroup toggleGroupMoreTime;
 
   @Inject
-  public AddMoreTimeView(EventBus eventBus, FxUtils fxUtils) {
+  public WashingCompletedView(EventBus eventBus, FxUtils fxUtils) {
     this.eventBus = eventBus;
     this.fxUtils = fxUtils;
 
@@ -45,17 +44,12 @@ public class AddMoreTimeView implements FxmlView<AddMoreTimeViewModel> {
   }
 
   @FXML
-  private void goToSelectedMethod() {
-    eventBus.post(new WashMethodSelected(viewModel.getWashMethod()));
-  }
-
-  @FXML
   private void startNow() {
     viewModel.addMoreTime(Integer.parseInt(toggleGroupMoreTime.getSelectedToggle().getUserData().toString()));
   }
 
   @Subscribe
-  private void onMoreTimeWanted(MoreTimeWanted event) {
+  private void onWashingCompleted(WashingCompleted event) {
     fxUtils.setScreen(getClass());
   }
 }

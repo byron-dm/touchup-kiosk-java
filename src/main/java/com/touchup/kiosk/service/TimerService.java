@@ -102,6 +102,7 @@ public final class TimerService {
       }
     });
 
+    timer.setRestartOnFailure(false);
     timer.setDelay(Duration.seconds(1));
     timer.setPeriod(Duration.seconds(1));
   }

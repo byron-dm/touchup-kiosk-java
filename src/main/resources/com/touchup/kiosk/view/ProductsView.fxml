@@ -36,7 +36,7 @@
                     <ImageView>
                         <Image url="/images/products/3-pack-microfibers.png" />
                     </ImageView>
-                    <Label styleClass="label-product-name" text="%ProductsView.Label.3PackMicrofibers" />
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.3PackMicrofibers" wrapText="true" />
                     <MigPane cols="[]push[]">
                         <Label styleClass="label-product-cost" text="\$ 2" />
                         <FontIcon iconLiteral="fas-check:24:white" />
@@ -51,7 +51,7 @@
                     <ImageView>
                         <Image url="/images/products/5-pack-microfibers.png" />
                     </ImageView>
-                    <Label styleClass="label-product-name" text="%ProductsView.Label.5PackMicrofibers" />
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.5PackMicrofibers" wrapText="true" />
                     <MigPane cols="[]push[]">
                         <Label styleClass="label-product-cost" text="\$ 3" />
                         <FontIcon iconLiteral="fas-check:24:white" />
@@ -66,9 +66,9 @@
                     <ImageView>
                         <Image url="/images/products/tire-gel.png" />
                     </ImageView>
-                    <Label styleClass="label-product-name" text="%ProductsView.Label.TireGel" />
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.TireGel" wrapText="true" />
                     <MigPane cols="[]push[]">
-                        <Label styleClass="label-product-cost" text="\$ 1.5" />
+                        <Label styleClass="label-product-cost" text="\$ 1.50" />
                         <FontIcon iconLiteral="fas-check:24:white" />
                     </MigPane>
                 </MigPane>
@@ -81,7 +81,7 @@
                     <ImageView>
                         <Image url="/images/products/tire-applicator.png" />
                     </ImageView>
-                    <Label styleClass="label-product-name" text="%ProductsView.Label.TireApplicator" />
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.TireApplicator" wrapText="true" />
                     <MigPane cols="[]push[]">
                         <Label styleClass="label-product-cost" text="\$ 1" />
                         <FontIcon iconLiteral="fas-check:24:white" />
@@ -96,7 +96,7 @@
                     <ImageView>
                         <Image url="/images/products/interior-spray.png" />
                     </ImageView>
-                    <Label styleClass="label-product-name" text="%ProductsView.Label.InteriorSpray" />
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.InteriorSpray" wrapText="true" />
                     <MigPane cols="[]push[]">
                         <Label styleClass="label-product-cost" text="\$ 1" />
                         <FontIcon iconLiteral="fas-check:24:white" />
@@ -111,7 +111,7 @@
                     <ImageView>
                         <Image url="/images/products/window-spray.png" />
                     </ImageView>
-                    <Label styleClass="label-product-name" text="%ProductsView.Label.WindowSpray" />
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.WindowSpray" wrapText="true" />
                     <MigPane cols="[]push[]">
                         <Label styleClass="label-product-cost" text="\$ 1" />
                         <FontIcon iconLiteral="fas-check:24:white" />
@@ -126,7 +126,7 @@
                     <ImageView>
                         <Image url="/images/products/air-fresheners.png" />
                     </ImageView>
-                    <Label styleClass="label-product-name" text="%ProductsView.Label.AirFresheners" />
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.AirFresheners" wrapText="true" />
                     <MigPane cols="[]push[]">
                         <Label styleClass="label-product-cost" text="\$ 1" />
                         <FontIcon iconLiteral="fas-check:24:white" />
@@ -141,9 +141,9 @@
                     <ImageView>
                         <Image url="/images/products/leather-conditioner.png" />
                     </ImageView>
-                    <Label styleClass="label-product-name" text="%ProductsView.Label.LeatherConditioner" />
+                    <Label styleClass="label-product-name" text="%ProductsView.Label.LeatherConditioner" wrapText="true" />
                     <MigPane cols="[]push[]">
-                        <Label styleClass="label-product-cost" text="\$ 1.5" />
+                        <Label styleClass="label-product-cost" text="\$ 1.50" />
                         <FontIcon iconLiteral="fas-check:24:white" />
                     </MigPane>
                 </MigPane>
